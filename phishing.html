@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Phishing | CyberSafe Student Hub</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+color:white;
+text-align:center;
+background: linear-gradient(-45deg,#1e3a8a,#2563eb,#0ea5e9,#1e40af);
+background-size:400% 400%;
+animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+nav{
+background:#0f172a;
+padding:15px;
+}
+
+nav a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+text-decoration:underline;
+}
+
+header{
+padding:60px 20px;
+}
+
+header h1{
+font-size:45px;
+}
+
+.section{
+background:white;
+color:#333;
+max-width:900px;
+margin:30px auto;
+padding:30px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+text-align:left;
+}
+
+.section h2{
+color:#1e3a8a;
+}
+
+.section img{
+width:100%;
+border-radius:10px;
+margin-top:15px;
+}
+
+.warning{
+background:#ffe4e6;
+border-left:6px solid red;
+padding:15px;
+margin-top:15px;
+}
+
+.tip{
+background:#e0f2fe;
+border-left:6px solid #0ea5e9;
+padding:15px;
+margin-top:15px;
+}
+
+.completeBtn{
+display:block;
+margin:30px auto;
+padding:15px 30px;
+font-size:18px;
+border:none;
+border-radius:8px;
+background:#2563eb;
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+.completeBtn:hover{
+transform:scale(1.05);
+}
+
+.completed{
+background:#22c55e !important;
+}
+
+.back{
+display:inline-block;
+margin:30px;
+padding:12px 25px;
+background:white;
+color:#1e3a8a;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<a href="index.html">Home</a>
+<a href="malware.html">Malware</a>
+<a href="phishing.html">Phishing</a>
+<a href="weakpasswords.html">Weak Passwords</a>
+<a href="quiz.html">Quiz</a>
+
+</nav>
+
+<header>
+
+<h1>🎣 Phishing Attacks</h1>
+
+<p>Learn how cyber criminals trick people into giving away personal information.</p>
+
+</header>
+
+
+<div class="section">
+
+<h2>What is Phishing?</h2>
+
+<p>
+Phishing is a cyber attack where criminals pretend to be trusted organisations
+such as banks, universities, or delivery companies in order to trick people
+into revealing sensitive information like passwords or credit card details.
+</p>
+
+<p>
+These attacks often come in the form of emails, text messages, or fake websites
+that look legitimate but are designed to steal personal data.
+</p>
+
+<img src="https://images.unsplash.com/photo-1563986768609-322da13575f3">
+
+</div>
+
+
+<div class="section">
+
+<h2>Why Students Are Targeted</h2>
+
+<p>
+Students are common targets for phishing because they rely heavily on online
+services such as university email, banking apps, and cloud storage.
+</p>
+
+<p>
+Attackers know students receive many emails from different services, making it
+easier for fake emails to blend in with legitimate messages.
+</p>
+
+<div class="warning">
+
+<strong>⚠ Example:</strong><br>
+Students sometimes receive fake emails claiming their university account
+will be suspended unless they verify their login details.
+
+</div>
+
+</div>
+
+
+<div class="section">
+
+<h2>Example of a Phishing Email</h2>
+
+<p>
+Below is an example of a typical phishing email. Attackers often create
+a sense of urgency to pressure users into acting quickly.
+</p>
+
+<div class="warning">
+
+<strong>Subject:</strong> Urgent – Verify Your University Account<br><br>
+
+Dear Student,<br><br>
+
+We have detected unusual activity on your university email account.
+Please verify your login details immediately using the link below
+to prevent your account from being suspended.<br><br>
+
+Verify your account here:<br>
+<strong>http://university-login-security-update.com</strong>
+
+</div>
+
+</div>
+
+
+<div class="section">
+
+<h2>How to Spot Phishing Attempts</h2>
+
+<ul>
+
+<li>Suspicious sender email addresses</li>
+
+<li>Urgent messages asking for immediate action</li>
+
+<li>Links that lead to unfamiliar websites</li>
+
+<li>Poor spelling or grammar in emails</li>
+
+<li>Requests for passwords or personal information</li>
+
+</ul>
+
+</div>
+
+
+<div class="section">
+
+<h2>How Students Can Protect Themselves</h2>
+
+<div class="tip">
+
+<ul>
+
+<li>Always verify emails before clicking links</li>
+
+<li>Enable two-factor authentication (2FA)</li>
+
+<li>Never share passwords via email</li>
+
+<li>Use official university websites to log in</li>
+
+<li>Report suspicious emails to university IT services</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<button class="completeBtn" id="completeBtn" onclick="completeSection()">
+✔ Mark Section Complete
+</button>
+
+
+<a class="back" href="index.html">⬅ Back to Home</a>
+
+
+<script>
+
+function completeSection(){
+
+localStorage.setItem("phishing","complete");
+
+let btn = document.getElementById("completeBtn");
+
+btn.classList.add("completed");
+
+btn.innerHTML = "✔ Completed";
+
+}
+
+window.onload = function(){
+
+let btn = document.getElementById("completeBtn");
+
+if(localStorage.getItem("phishing") === "complete"){
+
+btn.classList.add("completed");
+
+btn.innerHTML = "✔ Completed";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

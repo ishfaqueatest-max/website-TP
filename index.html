@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CyberSafe Student Hub</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+color:white;
+text-align:center;
+background: linear-gradient(-45deg,#1e3a8a,#2563eb,#0ea5e9,#1e40af);
+background-size:400% 400%;
+animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+nav{
+background:#0f172a;
+padding:15px;
+}
+
+nav a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+text-decoration:underline;
+}
+
+header{
+padding:60px 20px;
+}
+
+header h1{
+font-size:50px;
+}
+
+/* ── About Section ── */
+.about{
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.18);
+  max-width: 780px;
+  margin: 0 auto 10px;
+  padding: 32px 40px;
+  border-radius: 16px;
+  text-align: left;
+}
+
+.about h2{
+  margin: 0 0 14px;
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #bfdbfe;
+}
+
+.about p{
+  margin: 0 0 16px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.88);
+}
+
+.about p:last-child{ margin-bottom: 0; }
+
+.about-pills{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.pill{
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.03em;
+  color: #e0f2fe;
+}
+/* ── End About Section ── */
+
+.container{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:25px;
+padding:40px;
+}
+
+.card{
+background:white;
+color:#1e3a8a;
+width:220px;
+padding:25px;
+border-radius:12px;
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+transition:0.3s;
+text-decoration:none;
+}
+
+.card:hover{
+transform:translateY(-8px) scale(1.05);
+}
+
+.progressBox{
+background:white;
+color:#333;
+max-width:600px;
+margin:40px auto;
+padding:30px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.progressBar{
+width:100%;
+background:#e5e7eb;
+border-radius:10px;
+overflow:hidden;
+margin-top:15px;
+}
+
+.progressFill{
+height:20px;
+width:0%;
+background:#22c55e;
+transition:0.5s;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<a href="index.html">Home</a>
+<a href="malware.html">Malware</a>
+<a href="phishing.html">Phishing</a>
+<a href="weakpasswords.html">Weak Passwords</a>
+<a href="quiz.html">Quiz</a>
+
+</nav>
+
+<header>
+
+<h1>🔐 CyberSafe Student Hub</h1>
+
+<p>Learn about common cyber threats and how students can stay safe online.</p>
+
+</header>
+
+<!-- ── About Section ── -->
+<div class="about">
+  <h2>📖 About This Website</h2>
+  <p>
+    CyberSafe Student Hub is a structured cybersecurity learning platform built specifically for university students.
+    It covers three core threat areas — <strong>Malware</strong>, <strong>Phishing</strong>, and <strong>Weak Passwords</strong> —
+    each presented as a dedicated, self-contained module you can work through at your own pace.
+  </p>
+  <p>
+    Once you've completed the information sections, a <strong>knowledge quiz</strong> lets you put what you've learned to the test
+    with scenario-based questions drawn directly from the module content.
+    A built-in <strong>progress tracker</strong> monitors which sections and the quiz you've finished,
+    giving you a live percentage so you always know exactly how far through the course you are.
+  </p>
+  <div class="about-pills">
+    <span class="pill">🎓 Built for Uni Students</span>
+    <span class="pill">📚 3 Learning Modules</span>
+    <span class="pill">🧠 Knowledge Quiz</span>
+    <span class="pill">📊 Progress Tracker</span>
+  </div>
+</div>
+<!-- ── End About Section ── -->
+
+
+<div class="container">
+
+<a class="card" href="malware.html">
+<h2>🦠 Malware</h2>
+<p>Learn about malicious software and how it spreads.</p>
+</a>
+
+<a class="card" href="phishing.html">
+<h2>🎣 Phishing</h2>
+<p>Understand how attackers trick users into revealing data.</p>
+</a>
+
+<a class="card" href="weakpasswords.html">
+<h2>🔑 Weak Passwords</h2>
+<p>Discover why strong passwords are essential.</p>
+</a>
+
+<a class="card" href="quiz.html">
+<h2>🧠 Quiz</h2>
+<p>Test your cybersecurity knowledge.</p>
+</a>
+
+</div>
+
+
+<div class="progressBox">
+
+<h2>📊 Learning Progress</h2>
+
+<p id="malwareStatus">Malware: ❌</p>
+<p id="phishingStatus">Phishing: ❌</p>
+<p id="passwordStatus">Weak Passwords: ❌</p>
+<p id="quizStatus">Quiz: ❌</p>
+
+<h3 id="progressText">Progress: 0%</h3>
+
+<div class="progressBar">
+<div id="progressFill" class="progressFill"></div>
+</div>
+
+</div>
+
+
+<script>
+
+let completed = 0;
+let total = 4;
+
+function check(section,id){
+
+if(localStorage.getItem(section) === "complete"){
+
+document.getElementById(id).innerHTML =
+document.getElementById(id).innerHTML.replace("❌","✔");
+
+completed++;
+
+}
+
+}
+
+check("malware","malwareStatus");
+check("phishing","phishingStatus");
+check("passwords","passwordStatus");
+check("quiz","quizStatus");
+
+let percent = Math.round((completed/total)*100);
+
+document.getElementById("progressText").innerHTML =
+"Progress: " + percent + "%";
+
+document.getElementById("progressFill").style.width =
+percent + "%";
+
+</script>
+
+</body>
+</html>
